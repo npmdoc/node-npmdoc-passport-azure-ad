@@ -1,0 +1,1903 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >passport-azure-ad (v3.0.6)</a>
+</h1>
+<h4>OIDC and Bearer Passport strategies for Azure Active Directory</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.passport-azure-ad">module passport-azure-ad</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.BearerStrategy">
+            function <span class="apidocSignatureSpan">passport-azure-ad.</span>BearerStrategy
+            <span class="apidocSignatureSpan">(options, verifyFn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.BearerStrategy.super_">
+            function <span class="apidocSignatureSpan">passport-azure-ad.</span>BearerStrategy.super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy">
+            function <span class="apidocSignatureSpan">passport-azure-ad.</span>OIDCStrategy
+            <span class="apidocSignatureSpan">(options, verify)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">passport-azure-ad.</span>BearerStrategy.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">passport-azure-ad.</span>BearerStrategy.super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">passport-azure-ad.</span>OIDCStrategy.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.passport-azure-ad.BearerStrategy">module passport-azure-ad.BearerStrategy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.BearerStrategy.BearerStrategy">
+            function <span class="apidocSignatureSpan">passport-azure-ad.</span>BearerStrategy
+            <span class="apidocSignatureSpan">(options, verifyFn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.BearerStrategy.super_">
+            function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.passport-azure-ad.BearerStrategy.prototype">module passport-azure-ad.BearerStrategy.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.BearerStrategy.prototype.authenticate">
+            function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.prototype.</span>authenticate
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.BearerStrategy.prototype.failWithLog">
+            function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.prototype.</span>failWithLog
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.BearerStrategy.prototype.jwtVerify">
+            function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.prototype.</span>jwtVerify
+            <span class="apidocSignatureSpan">(req, token, metadata, optionsToValidate, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.BearerStrategy.prototype.loadMetadata">
+            function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.prototype.</span>loadMetadata
+            <span class="apidocSignatureSpan">(params, next)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.passport-azure-ad.BearerStrategy.super_">module passport-azure-ad.BearerStrategy.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.BearerStrategy.super_.super_">
+            function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.BearerStrategy.super_.Strategy">
+            function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.super_.</span>Strategy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.passport-azure-ad.BearerStrategy.super_.prototype">module passport-azure-ad.BearerStrategy.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.BearerStrategy.super_.prototype.authenticate">
+            function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.super_.prototype.</span>authenticate
+            <span class="apidocSignatureSpan">(req, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.passport-azure-ad.OIDCStrategy">module passport-azure-ad.OIDCStrategy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.OIDCStrategy">
+            function <span class="apidocSignatureSpan">passport-azure-ad.</span>OIDCStrategy
+            <span class="apidocSignatureSpan">(options, verify)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.super_">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.passport-azure-ad.OIDCStrategy.prototype">module passport-azure-ad.OIDCStrategy.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._authCodeFlowHandler">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_authCodeFlowHandler
+            <span class="apidocSignatureSpan">(params, oauthConfig, optionsToValidate, req, next, iss, sub)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._errorResponseHandler">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_errorResponseHandler
+            <span class="apidocSignatureSpan">(err, err_description, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._flowInitializationHandler">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_flowInitializationHandler
+            <span class="apidocSignatureSpan">(oauthConfig, req, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._getAccessTokenBySecretOrAssertion">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_getAccessTokenBySecretOrAssertion
+            <span class="apidocSignatureSpan">(code, oauthConfig, next, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._hybridFlowHandler">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_hybridFlowHandler
+            <span class="apidocSignatureSpan">(params, oauthConfig, optionsToValidate, req, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._idTokenHandler">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_idTokenHandler
+            <span class="apidocSignatureSpan">(params, optionsToValidate, req, next, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._implicitFlowHandler">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_implicitFlowHandler
+            <span class="apidocSignatureSpan">(params, optionsToValidate, req, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._validateResponse">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_validateResponse
+            <span class="apidocSignatureSpan">(params, optionsToValidate, req, next, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype.authenticate">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>authenticate
+            <span class="apidocSignatureSpan">(req, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype.collectInfoFromReq">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>collectInfoFromReq
+            <span class="apidocSignatureSpan">(params, req, next, response)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype.failWithLog">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>failWithLog
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype.setOptions">
+            function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>setOptions
+            <span class="apidocSignatureSpan">(params, oauthConfig, optionsToValidate, done)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.passport-azure-ad" id="apidoc.module.passport-azure-ad">module passport-azure-ad</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.BearerStrategy" id="apidoc.element.passport-azure-ad.BearerStrategy">
+        function <span class="apidocSignatureSpan">passport-azure-ad.</span>BearerStrategy
+        <span class="apidocSignatureSpan">(options, verifyFn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Strategy(options, verifyFn) {
+  passport.Strategy.call(this);
+  this.name = &#x27;oauth-bearer&#x27;; // Me, a name I call myself.
+
+  if (!options)
+    throw new Error(&#x27;In BearerStrategy constructor: options is required&#x27;);
+  if (!verifyFn || typeof verifyFn !== &#x27;function&#x27;)
+    throw new Error(&#x27;In BearerStrategy constructor: verifyFn is required and it must be a function&#x27;);
+
+  this._verify = verifyFn;
+  this._options = options;
+
+  //---------------------------------------------------------------------------
+  // Set up the default values
+  //---------------------------------------------------------------------------
+
+  // clock skew. Must be a postive integer
+  if (options.clockSkew &#x26;&#x26; (typeof options.clockSkew !== &#x27;number&#x27; || options.clockSkew &#x3c;= 0 || options.clockSkew % 1 !== 0))
+    throw new Error(&#x27;clockSkew must be a positive integer&#x27;);
+  if (!options.clockSkew)
+    options.clockSkew = CONSTANTS.CLOCK_SKEW;
+
+  // default value of passReqToCallback is false
+  if (options.passReqToCallback !== true)
+    options.passReqToCallback = false;
+
+  // default value of validateIssuer is true
+  if (options.validateIssuer !== false)
+    options.validateIssuer = true;
+
+  // default value of allowMultiAudiencesInToken is false
+  if (options.allowMultiAudiencesInToken !== true)
+    options.allowMultiAudiencesInToken = false;
+
+  // if options.audience is a string or an array of string, then we use it;
+  // otherwise we use the clientID
+  if (options.audience &#x26;&#x26; typeof options.audience === &#x27;string&#x27;)
+    options.audience = [options.audience];
+  else if (!options.audience || !Array.isArray(options.audience) || options.length === 0)
+    options.audience = [options.clientID, &#x27;spn:&#x27; + options.clientID];
+
+  // default value of isB2C is false
+  if (options.isB2C !== true)
+    options.isB2C = false;
+
+  // turn issuer into an array
+  if (options.issuer === &#x27;&#x27;)
+    options.issuer = null;
+  if (options.issuer &#x26;&#x26; Array.isArray(options.issuer) &#x26;&#x26; options.issuer.length === 0)
+    options.issuer = null;
+  if (options.issuer &#x26;&#x26; !Array.isArray(options.issuer))
+    options.issuer = [options.issuer];
+
+  //---------------------------------------------------------------------------
+  // validate the things in options
+  //---------------------------------------------------------------------------
+
+  // clientID should not be empty
+  if (!options.clientID || options.clientID === &#x27;&#x27;)
+    throw new Error(&#x27;In BearerStrategy constructor: clientID cannot be empty&#x27;);
+
+  // identityMetadata must be https url
+  if (!options.identityMetadata || !UrlValidator.isHttpsUri(options.identityMetadata))
+    throw new Error(&#x27;In BearerStrategy constructor: identityMetadata must be provided and must be a https url&#x27;);
+
+  //---------------------------------------------------------------------------
+  // treatment of common endpoint and issuer
+  //---------------------------------------------------------------------------
+
+  // check if we are using the common endpoint
+  options._isCommonEndpoint = (options.identityMetadata.indexOf(&#x27;/common/&#x27;) != -1);
+
+  // issuer validation for common endpoint is not supported
+  if (options._isCommonEndpoint &#x26;&#x26; options.validateIssuer &#x26;&#x26; !options.issuer)
+    throw new Error(`In BearerStrategy constructor: you are using common endpoint, please either set &#x27;validateIssuer&#x27; to false,
+or provide &#x27;issuer&#x27; value in options`);
+
+  // give a warning if user is not validating issuer
+  if (!options.validateIssuer)
+    log.warn(`Production environments should always validate the issuer.`);
+
+  //---------------------------------------------------------------------------
+  // B2C.
+  // (1) policy must be provided and must have the valid prefix
+  // (2) common endpoint is not supported
+  //---------------------------------------------------------------------------
+
+  // for B2C,
+  if (options.isB2C) {
+    if (!options.policyName || !options.policyName.toLowerCase().startsWith(B2C_PREFIX))
+      throw new Error(&#x27;In BearerStrategy constructor: invalid policy for B2C&#x27;); ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.BearerStrategy.super_" id="apidoc.element.passport-azure-ad.BearerStrategy.super_">
+        function <span class="apidocSignatureSpan">passport-azure-ad.</span>BearerStrategy.super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Strategy() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy" id="apidoc.element.passport-azure-ad.OIDCStrategy">
+        function <span class="apidocSignatureSpan">passport-azure-ad.</span>OIDCStrategy
+        <span class="apidocSignatureSpan">(options, verify)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Strategy(options, verify) {
+  passport.Strategy.call(this);
+
+  /*
+   *  Caution when you want to change these values in the member functions of
+   *  Strategy, don&#x27;t use `this`, since `this` points to a subclass of `Strategy`.
+   *  To get `Strategy`, use Object.getPrototypeOf(this).
+   *
+   *  More comments at the beginning of `Strategy.prototype.authenticate`.
+   */
+  this._options = options;
+  this.name = &#x27;azuread-openidconnect&#x27;;
+
+  // stuff related to the verify function
+  this._verify = verify;
+  this._passReqToCallback = !!options.passReqToCallback;
+
+  if (options.useCookieInsteadOfSession === true)
+    this._useCookieInsteadOfSession = true;
+  else
+    this._useCookieInsteadOfSession = false;
+
+  if (!this._useCookieInsteadOfSession) {
+    // For each microsoft login page tab, we generate a {state, nonce, policy, timeStamp} tuple,
+    // normally user won&#x27;t keep opening microsoft login page in new tabs without putting their
+    // password for more than 10 tabs, so we only keep the most recent 10 tuples in session.
+    // The lifetime of each tuple is 60 minutes or user specified.
+    this._sessionContentHandler = new SessionContentHandler(options.nonceMaxAmount || NONCE_MAX_AMOUNT, options.nonceLifetime ||
+NONCE_LIFE_TIME);
+  } else {
+    this._cookieContentHandler = new CookieContentHandler(options.nonceMaxAmount || NONCE_MAX_AMOUNT, options.nonceLifetime || NONCE_LIFE_TIME
+, options.cookieEncryptionKeys);
+  }
+
+  /* When a user is authenticated for the first time, passport adds a new field
+   * to req.session called &#x27;passport&#x27;, and puts a &#x27;user&#x27; property inside (or your
+   * choice of field name and property name if you change passport._key and
+   * passport._userProperty values). req.session[&#x27;passport&#x27;][&#x27;user&#x27;] is usually
+   * user_id (or something similar) of the authenticated user to reduce the size
+   * of session. When the user logs out, req.session[&#x27;passport&#x27;][&#x27;user&#x27;] will be
+   * destroyed. Any request between login (when authenticated for the first time)
+   * and logout will have the &#x27;user_id&#x27; in req.session[&#x27;passport&#x27;][&#x27;user&#x27;], so
+   * passport can fetch it, find the user object in database and put the user
+   * object into a new field: req.user. Then the subsequent middlewares and the
+   * app can use the user object. This is how passport keeps user authenticated.
+   *
+   * For state validation, we also take advantage of req.session. we create a new
+   * field: req.session[sessionKey], where the sessionKey is our choice (in fact,
+   * this._key, see below). When we send a request with state, we put state into
+   * req.session[sessionKey].state; when we expect a request with state in query
+   * or body, we compare the state in query/body with the one stored in
+   * req.session[sessionKey].state, and then destroy req.session[sessionKey].state.
+   * User can provide a state by using `authenticate(Strategy, {state: &#x27;xxx&#x27;})`, or
+   * one will be generated automatically. This is essentially how passport-oauth2
+   * library does the state validation, and we use the same way in our library.
+   *
+   * request structure will look like the following. In real request some fields
+   * might not be there depending on the purpose of the request.
+   *
+   *    request ---|--- sessionID
+   *               |--- session --- |--- ...
+   *               |                |--- &#x27;passport&#x27; ---| --- &#x27;user&#x27;: &#x27;user_id etc&#x27;
+   *               |                |---  sessionKey---| --- state: &#x27;xxx&#x27;
+   *               |--- ...
+   *               |--- &#x27;user&#x27;:  full user info
+   */
+  this._key = options.sessionKey || (&#x27;OIDC: &#x27; + options.redirectUrl);
+
+  if (!options.identityMetadata) {
+    // default value should be https://login.microsoftonline.com/common/.well-known/openid-configuration
+    log.error(&#x27;OIDCStrategy requires a metadata location that contains cert data for RSA and ECDSA callback.&#x27;);
+    throw new TypeError(`OIDCStrategy requires a metadata location that contains cert data for RSA and ECDSA callback.`);
+  }
+
+  // if loggi ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.passport-azure-ad.BearerStrategy" id="apidoc.module.passport-azure-ad.BearerStrategy">module passport-azure-ad.BearerStrategy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.BearerStrategy.BearerStrategy" id="apidoc.element.passport-azure-ad.BearerStrategy.BearerStrategy">
+        function <span class="apidocSignatureSpan">passport-azure-ad.</span>BearerStrategy
+        <span class="apidocSignatureSpan">(options, verifyFn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Strategy(options, verifyFn) {
+  passport.Strategy.call(this);
+  this.name = &#x27;oauth-bearer&#x27;; // Me, a name I call myself.
+
+  if (!options)
+    throw new Error(&#x27;In BearerStrategy constructor: options is required&#x27;);
+  if (!verifyFn || typeof verifyFn !== &#x27;function&#x27;)
+    throw new Error(&#x27;In BearerStrategy constructor: verifyFn is required and it must be a function&#x27;);
+
+  this._verify = verifyFn;
+  this._options = options;
+
+  //---------------------------------------------------------------------------
+  // Set up the default values
+  //---------------------------------------------------------------------------
+
+  // clock skew. Must be a postive integer
+  if (options.clockSkew &#x26;&#x26; (typeof options.clockSkew !== &#x27;number&#x27; || options.clockSkew &#x3c;= 0 || options.clockSkew % 1 !== 0))
+    throw new Error(&#x27;clockSkew must be a positive integer&#x27;);
+  if (!options.clockSkew)
+    options.clockSkew = CONSTANTS.CLOCK_SKEW;
+
+  // default value of passReqToCallback is false
+  if (options.passReqToCallback !== true)
+    options.passReqToCallback = false;
+
+  // default value of validateIssuer is true
+  if (options.validateIssuer !== false)
+    options.validateIssuer = true;
+
+  // default value of allowMultiAudiencesInToken is false
+  if (options.allowMultiAudiencesInToken !== true)
+    options.allowMultiAudiencesInToken = false;
+
+  // if options.audience is a string or an array of string, then we use it;
+  // otherwise we use the clientID
+  if (options.audience &#x26;&#x26; typeof options.audience === &#x27;string&#x27;)
+    options.audience = [options.audience];
+  else if (!options.audience || !Array.isArray(options.audience) || options.length === 0)
+    options.audience = [options.clientID, &#x27;spn:&#x27; + options.clientID];
+
+  // default value of isB2C is false
+  if (options.isB2C !== true)
+    options.isB2C = false;
+
+  // turn issuer into an array
+  if (options.issuer === &#x27;&#x27;)
+    options.issuer = null;
+  if (options.issuer &#x26;&#x26; Array.isArray(options.issuer) &#x26;&#x26; options.issuer.length === 0)
+    options.issuer = null;
+  if (options.issuer &#x26;&#x26; !Array.isArray(options.issuer))
+    options.issuer = [options.issuer];
+
+  //---------------------------------------------------------------------------
+  // validate the things in options
+  //---------------------------------------------------------------------------
+
+  // clientID should not be empty
+  if (!options.clientID || options.clientID === &#x27;&#x27;)
+    throw new Error(&#x27;In BearerStrategy constructor: clientID cannot be empty&#x27;);
+
+  // identityMetadata must be https url
+  if (!options.identityMetadata || !UrlValidator.isHttpsUri(options.identityMetadata))
+    throw new Error(&#x27;In BearerStrategy constructor: identityMetadata must be provided and must be a https url&#x27;);
+
+  //---------------------------------------------------------------------------
+  // treatment of common endpoint and issuer
+  //---------------------------------------------------------------------------
+
+  // check if we are using the common endpoint
+  options._isCommonEndpoint = (options.identityMetadata.indexOf(&#x27;/common/&#x27;) != -1);
+
+  // issuer validation for common endpoint is not supported
+  if (options._isCommonEndpoint &#x26;&#x26; options.validateIssuer &#x26;&#x26; !options.issuer)
+    throw new Error(`In BearerStrategy constructor: you are using common endpoint, please either set &#x27;validateIssuer&#x27; to false,
+or provide &#x27;issuer&#x27; value in options`);
+
+  // give a warning if user is not validating issuer
+  if (!options.validateIssuer)
+    log.warn(`Production environments should always validate the issuer.`);
+
+  //---------------------------------------------------------------------------
+  // B2C.
+  // (1) policy must be provided and must have the valid prefix
+  // (2) common endpoint is not supported
+  //---------------------------------------------------------------------------
+
+  // for B2C,
+  if (options.isB2C) {
+    if (!options.policyName || !options.policyName.toLowerCase().startsWith(B2C_PREFIX))
+      throw new Error(&#x27;In BearerStrategy constructor: invalid policy for B2C&#x27;); ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.BearerStrategy.super_" id="apidoc.element.passport-azure-ad.BearerStrategy.super_">
+        function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Strategy() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.passport-azure-ad.BearerStrategy.prototype" id="apidoc.module.passport-azure-ad.BearerStrategy.prototype">module passport-azure-ad.BearerStrategy.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.BearerStrategy.prototype.authenticate" id="apidoc.element.passport-azure-ad.BearerStrategy.prototype.authenticate">
+        function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.prototype.</span>authenticate
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function authenticateStrategy(req) {
+  const self = this;
+  var params = {};
+  var optionsToValidate = {};
+
+  /* Some introduction to async.waterfall (from the following link):
+   * http://stackoverflow.com/questions/28908180/what-is-a-simple-implementation-of-async-waterfall
+   *
+   *   Runs the tasks array of functions in series, each passing their results
+   * to the next in the array. However, if any of the tasks pass an error to
+   * their own callback, the next function is not executed, and the main callback
+   * is immediately called with the error.
+   *
+   * Example:
+   *
+   * async.waterfall([
+   *   function(callback) {
+   *     callback(null, &#x27;one&#x27;, &#x27;two&#x27;);
+   *   },
+   *   function(arg1, arg2, callback) {
+   *     // arg1 now equals &#x27;one&#x27; and arg2 now equals &#x27;two&#x27;
+   *     callback(null, &#x27;three&#x27;);
+   *   },
+   *   function(arg1, callback) {
+   *     // arg1 now equals &#x27;three&#x27;
+   *     callback(null, &#x27;done&#x27;);
+   *   }
+   * ], function (err, result) {
+   *      // result now equals &#x27;done&#x27;
+   * });
+   */
+  async.waterfall([
+
+    // compute metadataUrl
+    (next) =&#x3e; {
+      params.metadataURL = self._options.identityMetadata
+            .concat(`?${aadutils.getLibraryProductParameterName()}=${aadutils.getLibraryProduct()}`)
+            .concat(`&#x26;${aadutils.getLibraryVersionParameterName()}=${aadutils.getLibraryVersion()}`); ;
+
+      if (self._options.isB2C)
+        params.metadataURL = params.metadataURL.concat(`&#x26;p=${self._options.policyName}`)
+
+      params.cacheKey = params.metadataURL;
+
+      log.info(`In Strategy.prototype.authenticate: ${JSON.stringify(params)}`);
+
+      return next(null, params);
+    },
+
+    // load metatadata
+    (params, next) =&#x3e; {
+      return self.loadMetadata(params, next);
+    },
+
+    // configure using metadata
+    (metadata, next) =&#x3e; {
+      params.metadata = metadata;
+      log.info(`In Strategy.prototype.authenticate: received metadata: ${JSON.stringify(metadata)}`);
+
+      // set up issuer
+      if (self._options.validateIssuer &#x26;&#x26; !self._options.issuer)
+        optionsToValidate.issuer = metadata.oidc.issuer;
+      else
+        optionsToValidate.issuer = self._options.issuer;
+
+      // set up algorithm
+      optionsToValidate.algorithms = metadata.oidc.algorithms;
+
+      // set up audience, validateIssuer, allowMultiAudiencesInToken
+      optionsToValidate.audience = self._options.audience;
+      optionsToValidate.validateIssuer = self._options.validateIssuer;
+      optionsToValidate.allowMultiAudiencesInToken = self._options.allowMultiAudiencesInToken;
+      optionsToValidate.ignoreExpiration = self._options.ignoreExpiration;
+
+      // clock skew
+      optionsToValidate.clockSkew = self._options.clockSkew;
+
+      log.info(`In Strategy.prototype.authenticate: we will validate the following options: ${optionsToValidate}`);
+
+      return next();
+    },
+
+    // extract the access token from the request, after getting the token, it
+    // will call `jwtVerify` to verify the token. If token is verified, `jwtVerify`
+    // will provide the token payload to self._verify function. self._verify is
+    // provided by the developer, it&#x27;s up to the developer to decide if the token
+    // payload is considered authenticated. If authenticated, self._verify will
+    // provide `user` object (developer&#x27;s decision of its content) to `verified`
+    // function here, and the `verified` function does the final work of stuffing
+    // the `user` obejct into req.user, so the following middleware can use it.
+    // This is basically how bearerStrategy works.
+    (next) =&#x3e; {
+      var token;
+
+      // token could be in header or body. query is not supported.
+
+      if (req.query &#x26;&#x26; req.query.access_token)
+        return self.failWithLog(&#x27;In Strategy.prototype.authenticate: access_token should be passed in request header or body. query
+ is unsupported&#x27;);
+
+      if (req.headers &#x26;&#x26; req.headers.authorization) {
+        var auth_components = req.headers.authorization.split(&#x27; &#x27;);
+        if (auth_ ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+To complete the sample, provide a route that corresponds to the path
+configuration parameter that is sent to the strategy:
+
+```javascript
+
+app.get(&#x27;/login&#x27;,
+  passport.<span class="apidocCodeKeywordSpan">authenticate</span>(&#x27;azuread-openidconnect&#x27;, { failureRedirect: &#x27;/&#
+x27; }),
+  function(req, res) {
+    log.info(&#x27;Login was called in the Sample&#x27;);
+    res.redirect(&#x27;/&#x27;);
+});
+
+// POST /auth/openid/return
+//   Use passport.authenticate() as route middleware to authenticate the
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.BearerStrategy.prototype.failWithLog" id="apidoc.element.passport-azure-ad.BearerStrategy.prototype.failWithLog">
+        function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.prototype.</span>failWithLog
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">failWithLog = function (message) {
+  log.info(`authentication failed due to: ${message}`);
+  return this.fail(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.BearerStrategy.prototype.jwtVerify" id="apidoc.element.passport-azure-ad.BearerStrategy.prototype.jwtVerify">
+        function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.prototype.</span>jwtVerify
+        <span class="apidocSignatureSpan">(req, token, metadata, optionsToValidate, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function jwtVerifyFunc(req, token, metadata, optionsToValidate, done) {
+  const self = this;
+
+  const decoded = jws.decode(token);
+  let PEMkey = null;
+
+  if (decoded == null) {
+    return done(null, false, &#x27;In Strategy.prototype.jwtVerify: Invalid JWT token.&#x27;);
+  }
+
+  log.info(&#x27;In Strategy.prototype.jwtVerify: token decoded:  &#x27;, decoded);
+
+  // When we generate the PEMkey, there are two different types of token signatures
+  // we have to validate here. One provides x5t and the other a kid. We need to call
+  // the right one.
+  if (decoded.header.x5t) {
+    PEMkey = metadata.generateOidcPEM(decoded.header.x5t);
+  } else if (decoded.header.kid) {
+    PEMkey = metadata.generateOidcPEM(decoded.header.kid);
+  } else {
+    return self.failWithLog(&#x27;In Strategy.prototype.jwtVerify: We did not receive a token we know how to validate&#x27;);
+  }
+
+  log.info(&#x27;PEMkey generated: &#x27; + PEMkey);
+
+  jwt.verify(token, PEMkey, optionsToValidate, (err, verifiedToken) =&#x3e; {
+    if (err) {
+      if (err.message)
+        return self.failWithLog(err.message);
+      else
+        return self.failWithLog(&#x27;In Strategy.prototype.jwtVerify: cannot verify id token&#x27;);
+    }
+
+    log.info(&#x27;In Strategy.prototype.jwtVerify: VerifiedToken: &#x27;, verifiedToken);
+
+    if (self._options.passReqToCallback) {
+      log.info(&#x27;In Strategy.prototype.jwtVerify: We did pass Req back to Callback&#x27;);
+      return self._verify(req, verifiedToken, done);
+    } else {
+      log.info(&#x27;In Strategy.prototype.jwtVerify: We did not pass Req back to Callback&#x27;);
+      return self._verify(verifiedToken, done);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.BearerStrategy.prototype.loadMetadata" id="apidoc.element.passport-azure-ad.BearerStrategy.prototype.loadMetadata">
+        function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.prototype.</span>loadMetadata
+        <span class="apidocSignatureSpan">(params, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadMetadata = function (params, next) {
+  const self = this;
+  var metadata = new Metadata(params.metadataURL, &#x27;oidc&#x27;, self._options);
+
+  // fetch metadata
+  return memoryCache.wrap(params.cacheKey, (cacheCallback) =&#x3e; {
+    metadata.fetch((fetchMetadataError) =&#x3e; {
+      if (fetchMetadataError) {
+        return self.failWithLog(&#x27;In loadMetadata: Unable to fetch metadata&#x27;);
+      }
+      return cacheCallback(null, metadata);
+    });
+  }, { ttl }, next);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.passport-azure-ad.BearerStrategy.super_" id="apidoc.module.passport-azure-ad.BearerStrategy.super_">module passport-azure-ad.BearerStrategy.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.BearerStrategy.super_.super_" id="apidoc.element.passport-azure-ad.BearerStrategy.super_.super_">
+        function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Strategy() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.BearerStrategy.super_.Strategy" id="apidoc.element.passport-azure-ad.BearerStrategy.super_.Strategy">
+        function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.super_.</span>Strategy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Strategy() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.passport-azure-ad.BearerStrategy.super_.prototype" id="apidoc.module.passport-azure-ad.BearerStrategy.super_.prototype">module passport-azure-ad.BearerStrategy.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.BearerStrategy.super_.prototype.authenticate" id="apidoc.element.passport-azure-ad.BearerStrategy.super_.prototype.authenticate">
+        function <span class="apidocSignatureSpan">passport-azure-ad.BearerStrategy.super_.prototype.</span>authenticate
+        <span class="apidocSignatureSpan">(req, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">authenticate = function (req, options) {
+  throw new Error(&#x27;Strategy#authenticate must be overridden by subclass&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+To complete the sample, provide a route that corresponds to the path
+configuration parameter that is sent to the strategy:
+
+```javascript
+
+app.get(&#x27;/login&#x27;,
+  passport.<span class="apidocCodeKeywordSpan">authenticate</span>(&#x27;azuread-openidconnect&#x27;, { failureRedirect: &#x27;/&#
+x27; }),
+  function(req, res) {
+    log.info(&#x27;Login was called in the Sample&#x27;);
+    res.redirect(&#x27;/&#x27;);
+});
+
+// POST /auth/openid/return
+//   Use passport.authenticate() as route middleware to authenticate the
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.passport-azure-ad.OIDCStrategy" id="apidoc.module.passport-azure-ad.OIDCStrategy">module passport-azure-ad.OIDCStrategy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.OIDCStrategy" id="apidoc.element.passport-azure-ad.OIDCStrategy.OIDCStrategy">
+        function <span class="apidocSignatureSpan">passport-azure-ad.</span>OIDCStrategy
+        <span class="apidocSignatureSpan">(options, verify)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Strategy(options, verify) {
+  passport.Strategy.call(this);
+
+  /*
+   *  Caution when you want to change these values in the member functions of
+   *  Strategy, don&#x27;t use `this`, since `this` points to a subclass of `Strategy`.
+   *  To get `Strategy`, use Object.getPrototypeOf(this).
+   *
+   *  More comments at the beginning of `Strategy.prototype.authenticate`.
+   */
+  this._options = options;
+  this.name = &#x27;azuread-openidconnect&#x27;;
+
+  // stuff related to the verify function
+  this._verify = verify;
+  this._passReqToCallback = !!options.passReqToCallback;
+
+  if (options.useCookieInsteadOfSession === true)
+    this._useCookieInsteadOfSession = true;
+  else
+    this._useCookieInsteadOfSession = false;
+
+  if (!this._useCookieInsteadOfSession) {
+    // For each microsoft login page tab, we generate a {state, nonce, policy, timeStamp} tuple,
+    // normally user won&#x27;t keep opening microsoft login page in new tabs without putting their
+    // password for more than 10 tabs, so we only keep the most recent 10 tuples in session.
+    // The lifetime of each tuple is 60 minutes or user specified.
+    this._sessionContentHandler = new SessionContentHandler(options.nonceMaxAmount || NONCE_MAX_AMOUNT, options.nonceLifetime ||
+NONCE_LIFE_TIME);
+  } else {
+    this._cookieContentHandler = new CookieContentHandler(options.nonceMaxAmount || NONCE_MAX_AMOUNT, options.nonceLifetime || NONCE_LIFE_TIME
+, options.cookieEncryptionKeys);
+  }
+
+  /* When a user is authenticated for the first time, passport adds a new field
+   * to req.session called &#x27;passport&#x27;, and puts a &#x27;user&#x27; property inside (or your
+   * choice of field name and property name if you change passport._key and
+   * passport._userProperty values). req.session[&#x27;passport&#x27;][&#x27;user&#x27;] is usually
+   * user_id (or something similar) of the authenticated user to reduce the size
+   * of session. When the user logs out, req.session[&#x27;passport&#x27;][&#x27;user&#x27;] will be
+   * destroyed. Any request between login (when authenticated for the first time)
+   * and logout will have the &#x27;user_id&#x27; in req.session[&#x27;passport&#x27;][&#x27;user&#x27;], so
+   * passport can fetch it, find the user object in database and put the user
+   * object into a new field: req.user. Then the subsequent middlewares and the
+   * app can use the user object. This is how passport keeps user authenticated.
+   *
+   * For state validation, we also take advantage of req.session. we create a new
+   * field: req.session[sessionKey], where the sessionKey is our choice (in fact,
+   * this._key, see below). When we send a request with state, we put state into
+   * req.session[sessionKey].state; when we expect a request with state in query
+   * or body, we compare the state in query/body with the one stored in
+   * req.session[sessionKey].state, and then destroy req.session[sessionKey].state.
+   * User can provide a state by using `authenticate(Strategy, {state: &#x27;xxx&#x27;})`, or
+   * one will be generated automatically. This is essentially how passport-oauth2
+   * library does the state validation, and we use the same way in our library.
+   *
+   * request structure will look like the following. In real request some fields
+   * might not be there depending on the purpose of the request.
+   *
+   *    request ---|--- sessionID
+   *               |--- session --- |--- ...
+   *               |                |--- &#x27;passport&#x27; ---| --- &#x27;user&#x27;: &#x27;user_id etc&#x27;
+   *               |                |---  sessionKey---| --- state: &#x27;xxx&#x27;
+   *               |--- ...
+   *               |--- &#x27;user&#x27;:  full user info
+   */
+  this._key = options.sessionKey || (&#x27;OIDC: &#x27; + options.redirectUrl);
+
+  if (!options.identityMetadata) {
+    // default value should be https://login.microsoftonline.com/common/.well-known/openid-configuration
+    log.error(&#x27;OIDCStrategy requires a metadata location that contains cert data for RSA and ECDSA callback.&#x27;);
+    throw new TypeError(`OIDCStrategy requires a metadata location that contains cert data for RSA and ECDSA callback.`);
+  }
+
+  // if loggi ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.super_" id="apidoc.element.passport-azure-ad.OIDCStrategy.super_">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Strategy() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.passport-azure-ad.OIDCStrategy.prototype" id="apidoc.module.passport-azure-ad.OIDCStrategy.prototype">module passport-azure-ad.OIDCStrategy.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._authCodeFlowHandler" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype._authCodeFlowHandler">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_authCodeFlowHandler
+        <span class="apidocSignatureSpan">(params, oauthConfig, optionsToValidate, req, next, iss, sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function authCodeFlowHandler(params, oauthConfig, optionsToValidate, req, next, iss, sub) {
+  /* we will do the following things in order:
+   * (1) use code to get id_token and access_token
+   * (2) validate the id_token and the access_token received
+   * (3) if user asks for userinfo and we are using AAD v1, then we use access_token to get
+   *     userinfo, then make sure the userinfo has the same &#x27;sub&#x27; as that in the &#x27;id_token&#x27;
+   */
+  const self = this;
+  var code = params.code;
+
+  log.info(&#x27;entering Strategy.prototype._authCodeFlowHandler, received code: &#x27; + code);
+
+  var issFromPrevIdToken = iss;
+  var subFromPrevIdToken = sub;
+
+  return self._getAccessTokenBySecretOrAssertion(code, oauthConfig, next, (getOAuthAccessTokenError, items) =&#x3e; {
+    if (getOAuthAccessTokenError)
+      return next(new Error(`In _authCodeFlowHandler: failed to redeem authorization code: ${aadutils.getErrorMessage(getOAuthAccessTokenError
+)}`));
+
+    var access_token = items.access_token;
+    var refresh_token = items.refresh_token;
+
+    // id_token should be present
+    if (!items.id_token)
+      return next(new Error(&#x27;In _authCodeFlowHandler: id_token is not received&#x27;));
+
+    // token_type must be &#x27;Bearer&#x27; ignoring the case
+    if (items.token_type.toLowerCase() !== &#x27;bearer&#x27;) {
+      log.info(&#x27;token_type received is: &#x27;, items.token_type);
+      return next(new Error(`In _authCodeFlowHandler: token_type received is not &#x27;Bearer&#x27; ignoring the case`));
+    }
+
+    log.info(&#x27;received id_token: &#x27;, items.id_token);
+    log.info(&#x27;received access_token: &#x27;, access_token);
+    log.info(&#x27;received refresh_token: &#x27;, refresh_token);
+
+    // validate id_token and access_token, so put them into params
+    params.access_token = access_token;
+    params.id_token = items.id_token;
+
+    return self._idTokenHandler(params, optionsToValidate, req, next, (jwtClaimsStr, jwtClaims) =&#x3e; {
+      // for &#x27;code id_token&#x27; flow, check iss/sub in the id_token from the authorization endpoint
+      // with those in the id_token from token endpoint
+      if (issFromPrevIdToken &#x26;&#x26; issFromPrevIdToken !== jwtClaims.iss)
+        return next(new Error(&#x27;In _authCodeFlowHandler: After redeeming the code, iss in id_token from authorize_endpoint does not
+ match iss in id_token from token_endpoint&#x27;));
+      if (subFromPrevIdToken &#x26;&#x26; subFromPrevIdToken !== jwtClaims.sub)
+        return next(new Error(&#x27;In _authCodeFlowHandler: After redeeming the code, sub in id_token from authorize_endpoint does not
+ match sub in id_token from token_endpoint&#x27;));
+
+      const sub = jwtClaims.sub;
+      const iss = jwtClaims.iss;
+
+      // load the userinfo, if this is not v2 and if we don&#x27;t specify the resource
+      // for v1 if we don&#x27;t specify the resource, then the access_token we got is for userinfo endpoint, so we can use it to get
+ userinfo
+      if (!self._options._isV2 &#x26;&#x26; !params.resource) {
+        // make sure we get an access_token
+        if (!access_token)
+          return next(new Error(&#x22;In _authCodeFlowHandler: we want to access userinfo endpoint, but access_token is not received&#x22;));
+
+        let parsedUrl;
+        try {
+          parsedUrl = url.parse(oauthConfig.userinfo_endpoint, true);
+        } catch (urlParseException) {
+          return next(new Error(`In _authCodeFlowHandler: Failed to parse config property &#x27;userInfoURL&#x27; with value ${oauthConfig
+.userinfo_endpoint}`));
+        }
+
+        parsedUrl.query.schema = &#x27;openid&#x27;;
+        delete parsedUrl.search; // delete operations are slow; should we rather just overwrite it with {}
+        const userInfoURL = url.format(parsedUrl);
+
+        // ask oauth2 to use authorization header to bearer access token
+        var oauth2 = createOauth2Instance(oauthConfig);
+        oauth2.useAuthorizationHeaderforGET(true);
+        return oauth2.get(userInfoURL, access_token, (getUserInfoError, body) =&#x3e; {
+          if (getUserInfoError)
+            return next(new Error(`In _authCodeFlowHandler: failed to fetch user profile: ${aadutils.getErrorMessage(getUserInfoError
+)}`)); ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._errorResponseHandler" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype._errorResponseHandler">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_errorResponseHandler
+        <span class="apidocSignatureSpan">(err, err_description, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function errorResponseHandler(err, err_description, next) {
+  const self = this;
+
+  log.info(&#x27;Error received in the response was: &#x27;, err);
+  if (err_description)
+    log.info(&#x27;Error description received in the response was: &#x27;, err_description);
+
+  // Unfortunately, we cannot return the &#x27;error description&#x27; to the user, since
+  // it goes to http header by default and it usually contains characters that
+  // http header doesn&#x27;t like, which causes the program to crash.
+  return next(new Error(err));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._flowInitializationHandler" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype._flowInitializationHandler">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_flowInitializationHandler
+        <span class="apidocSignatureSpan">(oauthConfig, req, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function flowInitializationHandler(oauthConfig, req, next) {
+  // The request being authenticated is initiating OpenID Connect
+  // authentication. Prior to redirecting to the provider, configuration will
+  // be loaded. The configuration is typically either pre-configured or
+  // discovered dynamically. When using dynamic discovery, a user supplies
+  // their identifer as input.
+
+  const self = this;
+
+  log.info(`entering Strategy.prototype._flowInitializationHandler`);
+
+  const params = {
+    &#x27;redirect_uri&#x27;: oauthConfig.redirectUrl,
+    &#x27;response_type&#x27;: oauthConfig.responseType,
+    &#x27;response_mode&#x27;: oauthConfig.responseMode,
+    &#x27;client_id&#x27;: oauthConfig.clientID
+  };
+
+  log.info(&#x27;We are sending the response_type: &#x27;, params.response_type);
+  log.info(&#x27;We are sending the response_mode: &#x27;, params.response_mode);
+
+  if (oauthConfig.domain_hint)
+    params[&#x27;domain_hint&#x27;] = oauthConfig.domain_hint;
+  if (oauthConfig.login_hint)
+    params[&#x27;login_hint&#x27;] = oauthConfig.login_hint;
+  if (oauthConfig.prompt)
+    params[&#x27;prompt&#x27;] = oauthConfig.prompt;
+  if (oauthConfig.extraAuthReqQueryParams) {
+    // copy the extra query parameters into params
+    for (var attributeName in oauthConfig.extraAuthReqQueryParams) {
+      if (oauthConfig.extraAuthReqQueryParams.hasOwnProperty(attributeName))
+        params[attributeName] = oauthConfig.extraAuthReqQueryParams[attributeName];
+    }
+  }
+
+  var policy = null;
+  if (self._options.isB2C) {
+    if (!req.query.p || req.query.p === &#x27;&#x27;)
+      return next(new Error(&#x27;In _flowInitializationHandler: missing policy in the request for B2C&#x27;));
+    // policy is not case sensitive. AAD turns policy to lower case.
+    policy = req.query.p.toLowerCase();
+    if (!policy || !CONSTANTS.POLICY_REGEX.test(policy))
+      return next(new Error(`In _flowInitializationHandler: the given policy ${policy} given in the request is invalid`));
+  }
+
+  // add state/nonce/policy/timeStamp tuple to session or cookie
+  let state = params.state = oauthConfig.customState ? (&#x27;CUSTOM&#x27; + aadutils.uid(32) + oauthConfig.customState) : aadutils.uid(32
+);
+  let nonce = params.nonce = aadutils.uid(32);
+  let resource = oauthConfig.resource ? oauthConfig.resource : null;
+  if (resource)
+    params.resource = resource;
+
+  var tuple = { state: state, nonce: nonce };
+  if (policy)
+    tuple.policy = policy;
+  if (resource)
+    tuple.resource = resource;
+  if (oauthConfig.tenantIdOrName)
+    tuple.tenantIdOrName = oauthConfig.tenantIdOrName;
+
+  if (!self._useCookieInsteadOfSession) {
+    tuple.timeStamp = Date.now();
+    self._sessionContentHandler.add(req, self._key, tuple);
+  } else {
+    // we don&#x27;t need to record timestamp if we use cookie, since we can set the
+    // expiration when we set cookie
+    self._cookieContentHandler.add(req, oauthConfig.response, tuple);
+  }
+
+  // add scope
+  params.scope = oauthConfig.scope;
+
+  // add telemetry
+  params[aadutils.getLibraryProductParameterName()] = aadutils.getLibraryProduct();
+  params[aadutils.getLibraryVersionParameterName()] = aadutils.getLibraryVersion();
+  let location;
+
+  // Implement support for standard OpenID Connect params (display, prompt, etc.)
+  if (self._options.isB2C)
+    location = `${oauthConfig.authorization_endpoint}&#x26;${querystring.stringify(params)}`;
+  else
+    location = `${oauthConfig.authorization_endpoint}?${querystring.stringify(params)}`;
+
+  return self.redirect(location);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._getAccessTokenBySecretOrAssertion" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype._getAccessTokenBySecretOrAssertion">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_getAccessTokenBySecretOrAssertion
+        <span class="apidocSignatureSpan">(code, oauthConfig, next, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(code, oauthConfig, next, callback) =&#x3e; {
+  var post_headers = { &#x27;Content-Type&#x27;: &#x27;application/x-www-form-urlencoded&#x27; };
+
+  var post_params = {
+    code: code,
+    client_id: oauthConfig.clientID,
+    redirect_uri: oauthConfig.redirectUrl,
+    scope: oauthConfig.scope,
+    grant_type: &#x27;authorization_code&#x27;
+  };
+
+  if (oauthConfig.extraTokenReqQueryParams) {
+    // copy the extra query parameters into post_params
+    for (var attributeName in oauthConfig.extraTokenReqQueryParams) {
+      if (oauthConfig.extraTokenReqQueryParams.hasOwnProperty(attributeName))
+        post_params[attributeName] = oauthConfig.extraTokenReqQueryParams[attributeName];
+    }
+  }
+
+  if (oauthConfig.clientSecret) {
+    // use client secret if it exists
+    post_params[&#x27;client_secret&#x27;] = oauthConfig.clientSecret;
+    log.info(&#x27;In _getAccessTokenBySecretOrAssertion: we are using client secret&#x27;);
+  } else {
+    // otherwise generate a client assertion
+    post_params[&#x27;client_assertion_type&#x27;] = CONSTANTS.CLIENT_ASSERTION_TYPE;
+
+    jwt.generateClientAssertion(oauthConfig.clientID, oauthConfig.token_endpoint, oauthConfig.privatePEMKey, oauthConfig.thumbprint
+,
+      (err, assertion) =&#x3e; {
+        if (err)
+          return next(err);
+        else
+          post_params[&#x27;client_assertion&#x27;] = assertion;
+    });
+
+    log.info(&#x27;In _getAccessTokenBySecretOrAssertion: we created a client assertion with thumbprint &#x27; + oauthConfig.thumbprint);
+  };
+
+  var post_data = querystring.stringify(post_params);
+
+  var oauth2 = createOauth2Instance(oauthConfig);
+
+  oauth2._request(&#x27;POST&#x27;, oauthConfig.token_endpoint, post_headers, post_data, null, (error, data, response) =&#x3e; {
+    if (error) callback(error);
+    else {
+      var results;
+      try {
+        results = JSON.parse(data);
+      } catch(e) {
+        results = querystring.parse(data);
+      }
+      callback(null, results);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._hybridFlowHandler" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype._hybridFlowHandler">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_hybridFlowHandler
+        <span class="apidocSignatureSpan">(params, oauthConfig, optionsToValidate, req, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hybridFlowHandler(params, oauthConfig, optionsToValidate, req, next) {
+  /* we will do the following things in order
+   * (1) validate the id_token and the code
+   * (2) if there is no userinfo token needed (or ignored if using AAD v2 ), we use
+   *     the claims in id_token for user&#x27;s profile
+   * (3) if userinfo token is needed, we will use the &#x27;code&#x27; and the authorization code flow
+   */
+  const self = this;
+
+  log.info(&#x27;entering Strategy.prototype._hybridFlowHandler, received code: &#x27; + params.code + &#x27;, received id_token: &#x27; + params.id_token
+);
+
+  // save nonce, since if we use the authorization code flow later, we have to check
+  // nonce again.
+
+  // validate the id_token and the code
+  return self._idTokenHandler(params, optionsToValidate, req, next, (jwtClaimsStr, jwtClaims) =&#x3e; {
+    // c_hash is required for &#x27;code id_token&#x27; flow. If we have c_hash, then _validateResponse already
+    // validates it; otherwise, _validateResponse ignores the c_hash check, and we check here
+    if (!jwtClaims.c_hash)
+      return next(new Error(&#x22;In _hybridFlowHandler: we are in hybrid flow using code id_token, but c_hash is not found in id_token
+&#x22;));
+
+    const sub = jwtClaims.sub;
+    const iss = jwtClaims.iss;
+
+    // now we use the authorization code flow
+    return self._authCodeFlowHandler(params, oauthConfig, optionsToValidate, req, next, iss, sub);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._idTokenHandler" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype._idTokenHandler">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_idTokenHandler
+        <span class="apidocSignatureSpan">(params, optionsToValidate, req, next, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function idTokenHandler(params, optionsToValidate, req, next, callback) {
+  const self = this;
+
+  var id_token = params.id_token;
+  var parts = id_token.split(&#x27;.&#x27;);
+
+  if (parts.length === 3)
+    return self._validateResponse(params, optionsToValidate, req, next, callback);
+  else if (parts.length === 5) {
+    log.info(&#x27;In _idTokenHandler: we received an id_token of JWE format, we are decrypting it&#x27;);
+    var decrypted_token;
+
+    return jwe.decrypt(id_token, optionsToValidate.jweKeyStore, log, (err, decrypted_token) =&#x3e; {
+      if(err)
+        return next(err);
+
+      params.id_token = decrypted_token;
+      return self._validateResponse(params, optionsToValidate, req, next, callback);
+    });
+  } else
+    return next(new Error(`id_token has ${parts.length} parts, it is neither jwe nor jws`));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._implicitFlowHandler" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype._implicitFlowHandler">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_implicitFlowHandler
+        <span class="apidocSignatureSpan">(params, optionsToValidate, req, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function implicitFlowHandler(params, optionsToValidate, req, next) {
+  /* we will do the following things in order
+   * (1) validate id_token
+   * (2) use the claims in the id_token for user&#x27;s profile
+   */
+
+  const self = this;
+
+  log.info(&#x27;entering Strategy.prototype._implicitFlowHandler, received id_token: &#x27; + params.id_token);
+
+  // validate the id_token
+  return self._idTokenHandler(params, optionsToValidate, req, next, (jwtClaimsStr, jwtClaims) =&#x3e; {
+    const sub = jwtClaims.sub;
+    const iss = jwtClaims.iss;
+
+    log.info(&#x27;we are in implicit flow, use the content in id_token as the profile&#x27;);
+
+    return onProfileLoaded(self, {
+      req,
+      sub,
+      iss,
+      profile: makeProfileObject(jwtClaims, jwtClaimsStr),
+      jwtClaims,
+      access_token: null,
+      refresh_token: null,
+      params: null
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype._validateResponse" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype._validateResponse">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>_validateResponse
+        <span class="apidocSignatureSpan">(params, optionsToValidate, req, next, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validateResponse(params, optionsToValidate, req, next, callback) {
+  const self = this;
+
+  var id_token = params.id_token;
+  var code = params.code;
+  var access_token = params.access_token;
+
+  // decode id_token
+  const decoded = jws.decode(id_token);
+  if (decoded == null)
+    return next(new Error(&#x27;In _validateResponse: Invalid JWT token&#x27;));
+
+  log.info(&#x27;token decoded: &#x27;, decoded);
+
+  // get Pem Key
+  var PEMkey = null;
+  if (decoded.header.kid) {
+    PEMkey = params.metadata.generateOidcPEM(decoded.header.kid);
+  } else if (decoded.header.x5t) {
+    PEMkey = params.metadata.generateOidcPEM(decoded.header.x5t);
+  } else {
+    return next(new Error(&#x27;In _validateResponse: We did not receive a token we know how to validate&#x27;));
+  }
+  log.info(&#x27;PEMkey generated: &#x27; + PEMkey);
+
+  // verify id_token signature and claims
+  return jwt.verify(id_token, PEMkey, optionsToValidate, (err, jwtClaims) =&#x3e; {
+    if (err)
+      return next(new Error(`In _validateResponse: ${aadutils.getErrorMessage(err)}`));
+
+    log.info(&#x22;Claims received: &#x22;, jwtClaims);
+
+    // jwt checks the &#x27;nbf&#x27;, &#x27;exp&#x27;, &#x27;aud&#x27;, &#x27;iss&#x27; claims
+    // there are a few other things we will check below
+
+    // For B2C, check the policy
+    if (self._options.isB2C) {
+      var policy_in_idToken;
+
+      if (jwtClaims.acr &#x26;&#x26; CONSTANTS.POLICY_REGEX.test(jwtClaims.acr))
+        policy_in_idToken = jwtClaims.acr;
+      else if (jwtClaims.tfp &#x26;&#x26; CONSTANTS.POLICY_REGEX.test(jwtClaims.tfp))
+        policy_in_idToken = jwtClaims.tfp.toLowerCase();
+      else
+        return next(new Error(&#x27;In _validateResponse: invalid B2C policy in id_token&#x27;));
+
+      if (params.policy !== policy_in_idToken)
+        return next(new Error(&#x22;In _validateResponse: policy in id_token does not match the policy used&#x22;));
+    }
+
+    // check nonce
+    if (!jwtClaims.nonce || jwtClaims.nonce === &#x27;&#x27; || jwtClaims.nonce !== optionsToValidate.nonce)
+      return next(new Error(&#x27;In _validateResponse: invalid nonce&#x27;));
+
+    // check c_hash
+    if (jwtClaims.c_hash) {
+      // checkHashValueRS256 checks if code is null, so we don&#x27;t bother here
+      if (!aadutils.checkHashValueRS256(code, jwtClaims.c_hash))
+        return next(new Error(&#x22;In _validateResponse: invalid c_hash&#x22;));
+    }
+
+    // check at_hash
+    if (jwtClaims.at_hash) {
+      // checkHashValueRS256 checks if access_token is null, so we don&#x27;t bother here
+      if (!aadutils.checkHashValueRS256(access_token, jwtClaims.at_hash))
+        return next(new Error(&#x22;In _validateResponse: invalid at_hash&#x22;));
+    }
+
+    // return jwt claims and jwt claims string
+    var idTokenSegments = id_token.split(&#x27;.&#x27;);
+    var jwtClaimsStr = base64url.decode(idTokenSegments[1]);
+    return callback(jwtClaimsStr, jwtClaims);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype.authenticate" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype.authenticate">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>authenticate
+        <span class="apidocSignatureSpan">(req, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function authenticateStrategy(req, options) {
+  /*
+   * We should be careful using &#x27;this&#x27;. Avoid the usage like `this.xxx = ...`
+   * unless you know what you are doing.
+   *
+   * In the passport source code
+   * (https://github.com/jaredhanson/passport/blob/master/lib/middleware/authenticate.js)
+   * when it attempts to call the `oidcstrategy.authenticate` function, passport
+   * creates an instance inherting oidcstrategy and then calls `instance.authenticate`.
+   * Therefore, when we come here, `this` is the instance, its prototype is the
+   * actual oidcstrategy, i.e. the `Strategy`. This means:
+   * (1) `this._options = `, `this._verify = `, etc only adds new fields to the
+   *      instance, it doesn&#x27;t change the values in oidcstrategy, i.e. `Strategy`.
+   * (2) `this._options`, `this._verify`, etc returns the field in the instance,
+   *     and if there is none, returns the field in oidcstrategy, i.e. `strategy`.
+   * (3) each time we call `authenticate`, we will get a brand new instance
+   *
+   * If you want to change the values in `Strategy`, use
+   *      const oidcstrategy = Object.getPrototypeOf(self);
+   * to get the strategy first.
+   *
+   * Note: Simply do `const self = Object.getPrototypeOf(this)` and use `self`
+   * won&#x27;t work, since the `this` instance has a couple of functions like
+   * success/fail/error... which `authenticate` will call. The following is the
+   * structure of `this`:
+   *
+   *   this
+   *   | --  success:  function(user, info)
+   *   | --  fail:     function(challenge, status)
+   *   | --  redirect: function(url, status)
+   *   | --  pass:     function()
+   *   | --  __proto__:  Strategy
+   *                 | --  _verify
+   *                 | --  _options
+   *                 | --  ...
+   *                 | --  __proto__:
+   *                              | --  authenticate:  function(req, options)
+   *                              | --  ...
+   */
+  const self = this;
+
+  var resource = options &#x26;&#x26; options.resourceURL;
+  var customState = options &#x26;&#x26; options.customState;
+  var tenantIdOrName = options &#x26;&#x26; options.tenantIdOrName;
+  var login_hint = options &#x26;&#x26; options.login_hint;
+  var domain_hint = options &#x26;&#x26; options.domain_hint;
+  var prompt = options &#x26;&#x26; options.prompt;
+  var extraAuthReqQueryParams = options &#x26;&#x26; options.extraAuthReqQueryParams;
+  var extraTokenReqQueryParams = options &#x26;&#x26; options.extraTokenReqQueryParams;
+  var response = options &#x26;&#x26; options.response;
+
+  // validate tenantIdOrName if it is provided
+  if (tenantIdOrName &#x26;&#x26; !CONSTANTS.TENANTNAME_REGEX.test(tenantIdOrName) &#x26;&#x26; !CONSTANTS.TENANTID_REGEX.test(tenantIdOrName))
+    return self.failWithLog(`In passport.authenticate: invalid tenantIdOrName ${tenantIdOrName}`);
+
+  // &#x27;params&#x27;: items we get from the request or metadata, such as id_token, code, policy, metadata, cacheKey, etc
+  var params = { &#x27;tenantIdOrName&#x27;: tenantIdOrName, &#x27;extraAuthReqQueryParams&#x27;: extraAuthReqQueryParams, &#x27;extraTokenReqQueryParams
+&#x27;: extraTokenReqQueryParams };
+  // &#x27;oauthConfig&#x27;: items needed for oauth flow (like redirection, code redemption), such as token_endpoint, userinfo_endpoint,
+etc
+  var oauthConfig = { &#x27;resource&#x27;: resource, &#x27;customState&#x27;: customState, &#x27;domain_hint&#x27;: domain_hint, &#x27;login_hint&#x27;: login_hint, &#x27;prompt
+&#x27;: prompt, &#x27;response&#x27;: response };
+  // &#x27;optionsToValidate&#x27;: items we need to validate id_token against, such as issuer, audience, etc
+  var optionsToValidate = {};
+
+  async.waterfall(
+    [
+      /*****************************************************************************
+       * Step 1. Collect information from the req and save the info into params
+       ****************************************************************************/
+      (next) =&#x3e; {
+        return self.collectInfoFromReq(params, req, next, response);
+      },
+
+      /*****************************************************************************
+       * Step 2. Load metadata, use the information from &#x27;params&#x27; and &#x27;self._options&#x27;
+       * to configure &#x27;oauthConfig&#x27; and &#x27;options ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+To complete the sample, provide a route that corresponds to the path
+configuration parameter that is sent to the strategy:
+
+```javascript
+
+app.get(&#x27;/login&#x27;,
+  passport.<span class="apidocCodeKeywordSpan">authenticate</span>(&#x27;azuread-openidconnect&#x27;, { failureRedirect: &#x27;/&#
+x27; }),
+  function(req, res) {
+    log.info(&#x27;Login was called in the Sample&#x27;);
+    res.redirect(&#x27;/&#x27;);
+});
+
+// POST /auth/openid/return
+//   Use passport.authenticate() as route middleware to authenticate the
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype.collectInfoFromReq" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype.collectInfoFromReq">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>collectInfoFromReq
+        <span class="apidocSignatureSpan">(params, req, next, response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">collectInfoFromReq = function (params, req, next, response) {
+  const self = this;
+
+  // the things we will put into &#x27;params&#x27;:
+  // err, err_description, id_token, code, policy, state, nonce, cachekey, metadata
+
+  // -------------------------------------------------------------------------
+  // we shouldn&#x27;t get any access_token or refresh_token from the request
+  // -------------------------------------------------------------------------
+  if ((req.query &#x26;&#x26; (req.query.access_token || req.query.refresh_token)) ||
+    (req.body &#x26;&#x26; (req.body.access_token || req.body.refresh_token)))
+    return next(new Error(&#x27;In collectInfoFromReq: neither access token nor refresh token is expected in the incoming request&#x27;));
+
+  // -------------------------------------------------------------------------
+  // we might get err, id_token, code, state from the request
+  // -------------------------------------------------------------------------
+  var source = null;
+
+  if (req.query &#x26;&#x26; (req.query.error || req.query.id_token || req.query.code))
+    source = req.query;
+  else if (req.body &#x26;&#x26; (req.body.error || req.body.id_token || req.body.code))
+    source = req.body;
+
+  if (source) {
+    params.err = source.error;
+    params.err_description = source.error_description;
+    params.id_token = source.id_token;
+    params.code = source.code;
+    params.state = source.state;
+    if (source.state &#x26;&#x26; source.state.length &#x3e;= 38) {
+      // the random generated state always has 32 characters. This state is longer than 32
+      // so it must be a custom state. We added &#x27;CUSTOM&#x27; prefix and a random 32 byte long
+      // string in front of the original custom state, now we change it back.
+      if (!source.state.startsWith(&#x27;CUSTOM&#x27;))
+        return next(new Error(`In collectInfoFromReq: invalid custom state ${state}`));
+
+      source.state = source.state.substring(38);
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // If we received code, id_token or err, we must have received state, now we
+  // find the state/nonce/policy tuple from session.
+  // If we received none of them, find policy in query
+  // -------------------------------------------------------------------------
+  if (params.id_token || params.code || params.err) {
+    if (!params.state)
+      return next(new Error(&#x27;In collectInfoFromReq: missing state in the request&#x27;));
+
+    var tuple;
+
+    if (!self._useCookieInsteadOfSession)
+      tuple = self._sessionContentHandler.findAndDeleteTupleByState(req, self._key, params.state);
+    else
+      tuple = self._cookieContentHandler.findAndDeleteTupleByState(req, response, params.state);
+
+    if (!tuple)
+      return next(new Error(&#x27;In collectInfoFromReq: invalid state received in the request&#x27;));
+
+    params.nonce = tuple[&#x27;nonce&#x27;];
+    params.policy = tuple[&#x27;policy&#x27;];
+    params.resource = tuple[&#x27;resource&#x27;];
+
+    // user provided tenantIdOrName will be ignored for redirectUrl, since we saved the one we used in session
+    if (params.tenantIdOrName)
+      log.info(`user provided tenantIdOrName &#x27;${params.tenantIdOrName}&#x27; is ignored for redirectUrl, we will use the one stored in
+ session`);
+    params.tenantIdOrName = tuple[&#x27;tenantIdOrName&#x27;];
+  } else {
+    params.policy = req.query.p ? req.query.p.toLowerCase() : null;
+  }
+
+  // if we are not using the common endpoint, but we have tenantIdOrName, just ignore it
+  if (!self._options.isCommonEndpoint &#x26;&#x26; params.tenantIdOrName) {
+    log.info(`identityMetadata is tenant-specific, so we ignore the tenantIdOrName &#x27;${params.tenantIdOrName}&#x27;`);
+    params.tenantIdOrName = null;
+  }
+
+  // if we are using the common endpoint and we want to validate issuer, then user has to
+  // provide issuer in config, or provide tenant id or name using tenantIdOrName option in
+  // passport.authenticate. Otherwise we won&#x27;t know the issuer.
+  if (self._options.isCommonEndpoint &#x26;&#x26; self._options.validateIssuer &#x26;&#x26;
+    (!self._options.issuer &#x26;&#x26; !params.tenantIdOrName))
+    return next(new Error(&#x27;In collectInfoFromReq: issu ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype.failWithLog" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype.failWithLog">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>failWithLog
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">failWithLog = function (message) {
+  this.log.info(`authentication failed due to: ${message}`);
+  return this.fail(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.passport-azure-ad.OIDCStrategy.prototype.setOptions" id="apidoc.element.passport-azure-ad.OIDCStrategy.prototype.setOptions">
+        function <span class="apidocSignatureSpan">passport-azure-ad.OIDCStrategy.prototype.</span>setOptions
+        <span class="apidocSignatureSpan">(params, oauthConfig, optionsToValidate, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setOptions(params, oauthConfig, optionsToValidate, done) {
+  const self = this;
+
+  async.waterfall([
+    // ------------------------------------------------------------------------
+    // load metadata
+    // ------------------------------------------------------------------------
+    (next) =&#x3e; {
+      memoryCache.wrap(params.cachekey, (cacheCallback) =&#x3e; {
+        params.metadata.fetch((fetchMetadataError) =&#x3e; {
+          if (fetchMetadataError) {
+            return cacheCallback(new Error(`In setOptions: Unable to fetch metadata`));
+          }
+          return cacheCallback(null, params.metadata);
+        });
+      }, { ttl }, next);
+    },
+
+    // ------------------------------------------------------------------------
+    // set oauthConfig: the information we need for oauth flow like redeeming code/access_token
+    // ------------------------------------------------------------------------
+    (metadata, next) =&#x3e; {
+      if (!metadata.oidc)
+        return next(new Error(&#x27;In setOptions: failed to load metadata&#x27;));
+      params.metadata = metadata;
+
+      // copy the fields needed into &#x27;oauthConfig&#x27;
+      aadutils.copyObjectFields(metadata.oidc, oauthConfig, [&#x27;authorization_endpoint&#x27;, &#x27;token_endpoint&#x27;, &#x27;userinfo_endpoint&#x27;]);
+      aadutils.copyObjectFields(self._options, oauthConfig, [&#x27;clientID&#x27;, &#x27;clientSecret&#x27;, &#x27;privatePEMKey&#x27;, &#x27;thumbprint&#x27;, &#x27;responseType
+&#x27;, &#x27;responseMode&#x27;, &#x27;scope&#x27;, &#x27;redirectUrl&#x27;]);
+      oauthConfig.tenantIdOrName = params.tenantIdOrName;
+      oauthConfig.extraAuthReqQueryParams = params.extraAuthReqQueryParams;
+      oauthConfig.extraTokenReqQueryParams = params.extraTokenReqQueryParams;
+
+      // validate oauthConfig
+      const validatorConfig = {
+        authorization_endpoint: Validator.isHttpsURL,
+        token_endpoint: Validator.isHttpsURL,
+        userinfo_endpoint: Validator.isHttpsURLIfExists,
+      };
+
+      try {
+        // validator will throw exception if a required option is missing
+        const checker = new Validator(validatorConfig);
+        checker.validate(oauthConfig);
+      } catch (ex) {
+        return next(new Error(`In setOptions: ${aadutils.getErrorMessage(ex)}`));
+      }
+
+      // for B2C, verify the endpoints in oauthConfig has the correct policy
+      if (self._options.isB2C){
+        var policyChecker = (endpoint, policy) =&#x3e; {
+          var u = {};
+          try {
+            u = url.parse(endpoint, true);
+          } catch (ex) {
+          }
+          return u.query &#x26;&#x26; u.query.p &#x26;&#x26; (policy.toLowerCase() === u.query.p.toLowerCase());
+        };
+        // B2C has no userinfo_endpoint, so no need to check it
+        if (!policyChecker(oauthConfig.authorization_endpoint, params.policy))
+          return next(new Error(`policy in ${oauthConfig.authorization_endpoint} should be ${params.policy}`));
+        if (!policyChecker(oauthConfig.token_endpoint, params.policy))
+          return next(new Error(`policy in ${oauthConfig.token_endpoint} should be ${params.policy}`));
+      }
+
+      return next(null, metadata);
+    },
+
+    // ------------------------------------------------------------------------
+    // set optionsToValidate: the information we need for id_token validation.
+    // we do this only if params has id_token or code, otherwise there is no
+    // id_token to validate
+    // ------------------------------------------------------------------------
+    (metadata, next) =&#x3e; {
+      if (!params.id_token &#x26;&#x26; !params.code)
+        return next(null);
+
+      // set items from self._options
+      aadutils.copyObjectFields(self._options, optionsToValidate,
+        [&#x27;validateIssuer&#x27;, &#x27;audience&#x27;, &#x27;allowMultiAudiencesInToken&#x27;, &#x27;ignoreExpiration&#x27;, &#x27;allowMultiAudiencesInToken&#x27;]);
+
+      // algorithms
+      var algorithms = metadata.oidc.algorithms;
+      if (!algorithms)
+        return next(new Error(&#x27;In setOptions: algorithms is missing in metadata&#x27;));
+      if (!Array.isArray(algorithms) || algorithms.length == 0 || (algorithms.length === 1 &#x26;&#x26; algorithms[0] === &#x27;no ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
